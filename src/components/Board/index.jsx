@@ -1,2 +1,2 @@
 import Square from "../Square";
-import
+import styles from
