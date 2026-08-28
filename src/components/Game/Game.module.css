@@ -1,0 +1,92 @@
+/* Layout principal do jogo: dividido em 2 containers */
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 32px;
+  padding: 20px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1f2937, #374151); /* Cinza escuro */
+  color: #f8fafc; /* Branco */
+  animation: fadeInGame 1s ease-in-out;
+}
+
+/* Container do tabuleiro (lado esquerdo) */
+.boardWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container de informações (lado direito) */
+.info {
+  flex: 1;
+  background: #991b1b; /* Vermelho principal */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+  animation: slideIn 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Título da seção */
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: #f8fafc; /* Branco */
+  border-bottom: 2px solid #f8fafc;
+  padding-bottom: 6px;
+  width: 100%;
+}
+
+/* Lista de movimentos */
+.info ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+/* Botões do histórico */
+.moveBtn {
+  background: transparent;
+  border: 1px solid #f8fafc;
+  color: #f8fafc;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.moveBtn:hover {
+  background: #f8fafc;
+  color: #991b1b;
+  transform: translateX(5px);
+}
+
+/* Animações globais */
+@keyframes fadeInGame {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
