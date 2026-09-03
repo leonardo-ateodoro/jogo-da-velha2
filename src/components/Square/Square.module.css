@@ -9,4 +9,48 @@
     cursor: pointer;
     transition: transform 0.2a ease, background 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    overflow: hidden;
+    overflow: hidden;}
+
+.square:hover {
+    background: linear-gradient(135deg, #dc2626, #991b1b);
+    transform: scale(1.08);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+
+
+}
+
+
+.square:hover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid white ;
+    border-radius: 4px;
+    animation: borderMove 1.2s linear infinite ;
+
+    
+}
+.square:active {
+    transform: scale(0.95);
+}
+@keyframes borderMove { 
+    0% {
+        clip-path: inset(0 100% 100% 0);
+    }
+    25% {
+        clip-path: inset(0 0 100% 0);
+    }
+    50% { 
+        clip-path: inset( 0 0 0 0);
+    
+    }
+    75% {
+        clip-path: inset(0 0 0 100%);
+
+    
+    }
+    100% {
+      clip-path: inset(0 100% 100% 0);  
+    }
+        
+    }
