@@ -17,9 +17,9 @@ export default function Board({ xIsNext, squares, onPlay }) {
 
     // Define o símbolo (X ou O) da jogada
     if (xIsNext) {
-      nextSquares[i] = "X";
+      nextSquares[i] = "🎈";
     } else {
-      nextSquares[i] = "O";
+      nextSquares[i] = "🎄";
     }
 
     // Atualiza o estado do jogo
@@ -32,15 +32,15 @@ export default function Board({ xIsNext, squares, onPlay }) {
   // Define a mensagem de status
   let status;
   if (winner) {
-    status = "🏆 Winner: " + winner;
+    status = "🥇 Vencedor: " + winner;
   } else {
-    status = "👉 Next player: " + (xIsNext ? "X" : "O");
+    status = "📣 Próximo jogador: " + (xIsNext ? "🎈" : "🎄");
   }
 
   // Renderiza o tabuleiro com título e 9 casas
   return (
     <div className={styles.board}>
-      <h1 className={styles.title}>🎮 Jogo da Velha</h1>
+      <h1 className={styles.title}>🎰 Jogo da Velha do Léo</h1>
       <div className={styles.status}>{status}</div>
       <div className={styles.row}>
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />

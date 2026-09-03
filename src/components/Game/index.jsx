@@ -30,9 +30,9 @@ export default function Game() {
   const moves = history.map((squares, move) => {
     let description;
     if (move > 0) {
-      description = "🔄 Go to move #" + move;
+      description = "🔄 Agora é a sua vez #" + move;
     } else {
-      description = "🎮 Go to game start";
+      description = "🎮 ir para o inicio do jogo";
     }
     return (
       <li key={move}>
@@ -50,7 +50,7 @@ export default function Game() {
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className={styles.info}>
-        <h2 className={styles.title}>History</h2>
+        <h2 className={styles.title}>Histórico</h2>
         <ol>{moves}</ol>
       </div>
     </div>
